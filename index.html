@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Level Up Conference</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="loginForm" class="col-4 mx-auto float-right">
+        <form @submit="checkLoginForm" method="post" class="col-4 mx-auto text-center">
+          <h3>Login Form</h4>
+          <p v-if="loginErrors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="loginError in loginErrors">{{ loginError }}</li>
+            </ul>
+          </p>
+          <p class="justify-content-md-center">Email</p>
+          <input type="email" v-model="loginEmail" placeholder="Email" id="email" class="justify-content-md-center">
+          <p class="justify-content-md-center">Password</p>
+          <input type="password" v-model="loginPassword" placeholder="Password" id="loginPassword" class="justify-content-md-center" minlength="8">
+          <p><input type="submit" value="Login"name="login" class="justify-content-md-center"></p>
+        </form>
+        <p class="col-4 mx-auto text-center"id="signupButton"><button onclick="signupButton();">Sign Up</button></p>
+      </div>
+      <div id="signupForm" class="col-4 mx-auto float-right">
+        <form @submit="checkSignupForm" method="post" class="col-4 mx-auto text-center">
+          <h4>Signup Form</h4>
+          <p v-if="signupErrors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="signupError in signupErrors">{{ signupError }}</li>
+            </ul>
+          </p>
+          <p class="justify-content-md-center">Email</p>
+          <input type="email" v-model="signupEmail" placeholder="Email" id="email" class="justify-content-md-center">
+          <p class="justify-content-md-center">Password</p>
+          <input type="password" v-model="signupPassword" placeholder="Password" id="signupPassword" class="justify-content-md-center" minlength="8">
+          <p class="justify-content-md-center">Password Confirmation</p>
+          <input type="password" v-model="signupPasswordConfirmation" placeholder="Password" id="signUpPasswordConfirmation" class="justify-content-md-center" minlength="8">
+          <p><input type="submit" value="Signup" name="signup" class="justify-content-md-center"></p>
+        </form>
+        <p class="col-4 mx-auto text-center" id="loginButton"><button onclick="loginButton();">Login</button></p>
+      </div>
+      <div id="about" class="col-4 mx-auto float-left">
+        <div id="header">
+          <h1 class="col-4 mx-auto text-center">{{ header }}</h1>
+          <h2 class="col-4 mx-auto text-center">{{ tagline }}</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus tellus auctor in vehicula dictum fames metus. Sagittis pellentesque natoque 
+          nibh elementum, aenean sed. Risus enim lobortis nullam vulputate enim. Sagittis lacinia egestas dignissim aliquam dignissim.
+      </div>
+    </div>
+    <script src="scripts/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
